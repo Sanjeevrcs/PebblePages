@@ -24,7 +24,7 @@ class AuthenticationMiddleware:
                     return HttpResponseUnauthorized()
                 request.user = token_obj.user
             except AccessToken.DoesNotExist:
-                pass
+                return HttpResponseUnauthorized()
         valid = request.user.is_authenticated or request.path in self.excluded_paths or request.path.startswith('/auth/') or request.path.startswith('/admin/')
         if not valid:
             return HttpResponseUnauthorized()

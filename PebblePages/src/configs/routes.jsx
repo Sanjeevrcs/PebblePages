@@ -1,6 +1,7 @@
 import Home from '../routes/Home';
 import ShareHandler from '../components/ShareHandler';
 import { Login } from '../routes/Login';
+import { Forms } from '../routes/Forms';
 
 export const routes = [
     {
@@ -14,5 +15,9 @@ export const routes = [
     {
         path:'/login',
         component:<Login/>
+    },
+    {
+        path : '/forms',
+        component : <Forms/>
     }
 ]
